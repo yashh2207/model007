@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b18">
+  <title>Yash Gandhi | Creative Developer</title>
+  <meta name="description" content="Explore the portfolio, projects and technology journey of Yash Gandhi.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080b18;
+      color: #f5f7ff;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8, 11, 24, 0.94);
+      border-bottom: 1px solid #ffffff15;
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #8b7cff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 14px;
+      color: #c5c9dc;
+    }
+
+    .nav-links a:hover {
+      color: #a99aff;
+    }
+
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 85px 20px;
+      background:
+        radial-gradient(ellipse at 50% 0%, #322269 0%, #12152e 43%, #080b18 78%);
+    }
+
+    .tag {
+      border: 1px solid #6d5cce;
+      border-radius: 50px;
+      padding: 7px 16px;
+      margin-bottom: 25px;
+      color: #c9c0ff;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      font-size: clamp(43px, 8vw, 82px);
+      line-height: 1.1;
+      letter-spacing: -2px;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, #a99aff, #57d5ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #b9c0d8;
+      margin: 25px 0 30px;
+      font-size: 17px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 23px;
+      border-radius: 10px;
+      background: linear-gradient(100deg, #7762ed, #438cf5);
+      color: white;
+      font-weight: bold;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      filter: brightness(1.15);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: #444a69;
+    }
+
+    section {
+      padding: 75px 8%;
+      scroll-margin-top: 70px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #9ea8c6;
+      margin-bottom: 38px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      padding: 27px;
+      border: 1px solid #252c48;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #151b32, #0d1122);
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #8070ed;
+    }
+
+    .icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 19px;
+    }
+
+    .card p {
+      color: #aab3cd;
+      font-size: 14px;
+    }
+
+    .about {
+      background: #0d1122;
+      border-top: 1px solid #ffffff0c;
+      border-bottom: 1px solid #ffffff0c;
+    }
+
+    .about-content {
+      max-width: 780px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-content p {
+      color: #b3bdd5;
+      margin: 18px 0;
+    }
+
+    .skills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .skill {
+      padding: 8px 15px;
+      border: 1px solid #343c60;
+      border-radius: 30px;
+      color: #d4d9f3;
+      font-size: 13px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    footer {
+      padding: 25px 15px;
+      text-align: center;
+      color: #8e98b5;
+      border-top: 1px solid #ffffff15;
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        padding: 15px 5%;
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 12px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 55px 6%;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .logo {
+        font-size: 19px;
+      }
+
+      .nav-links {
+        gap: 8px;
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a class="logo" href="#home">YG<span>.</span></a>
+
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="tag">✦ TECHNOLOGY · CREATIVITY · INNOVATION</div>
+
+    <h1>
+      Turning Ideas Into<br>
+      <span class="gradient">Digital Reality.</span>
+    </h1>
+
+    <p>
+      Hi, I'm Yash Gandhi — a Computer Engineering student
+      passionate about coding, innovative technology and
+      building meaningful digital experiences.
+    </p>
+
+    <div class="buttons">
+      <a href="#projects" class="btn">Explore My Work ↗</a>
+      <a href="#about" class="btn btn-outline">Discover More</a>
+    </div>
+  </header>
+
+  <section id="projects">
+    <h2 class="section-title">
+      Featured <span class="gradient">Projects</span>
+    </h2>
+
+    <p class="subtitle">
+      Exploring ideas and building solutions through technology.
+    </p>
+
+    <div class="cards">
+      <article class="card">
+        <div class="icon">🤖</div>
+        <h3>Artificial Intelligence</h3>
+        <p>
+          Exploring AI concepts and cloud-based tools to
+          understand intelligent digital solutions.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="icon">💻</div>
+        <h3>Web Development</h3>
+        <p>
+          Creating responsive websites with HTML, CSS and
+          JavaScript for modern web experiences.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="icon">📱</div>
+        <h3>Application Development</h3>
+        <p>
+          Designing useful application concepts with simple
+          interfaces and practical features.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-content">
+      <h2 class="section-title">
+        About <span class="gradient">Me</span>
+      </h2>
+
+      <p>
+        I'm Yash Gandhi, a Computer Engineering student who enjoys
+        learning software development, exploring emerging technology
+        and turning creative ideas into useful digital products.
+      </p>
+
+      <p>
+        I believe in continuous learning, creative problem-solving
+        and building projects that make everyday tasks easier.
+      </p>
+
+      <div class="skills">
+        <span class="skill">HTML & CSS</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">Python</span>
+        <span class="skill">Android</span>
+        <span class="skill">AI Tools</span>
+        <span class="skill">Firebase</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2 class="section-title">
+      Let's <span class="gradient">Connect</span>
+    </h2>
+
+    <p class="subtitle">
+      Have an idea or want to collaborate? Get in touch with me.
+    </p>
+
+    <a class="btn" href="mailto:yashgandhii2222@gmail.com">
+      ✉ Contact Me
+    </a>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Yash Gandhi. Built with passion.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
